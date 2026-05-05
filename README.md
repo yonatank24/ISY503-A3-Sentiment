@@ -55,7 +55,7 @@ customer data.
 | Normalise | MaxAbsScaler standardises feature vectors |
 | Split | 70% training / 15% validation / 15% test |
 | Batches | Python generator function, batch size 32 |
-| Train | MLP Neural Network — 128 → 64 neurons, ReLU, Adam |
+| Train | MLP Neural Network - 128 → 64 neurons, ReLU, Adam |
 | Compare | Logistic Regression trained on same data |
 | Evaluate | Accuracy, classification report, confusion matrix |
 
