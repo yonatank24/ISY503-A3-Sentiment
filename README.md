@@ -1,7 +1,7 @@
-# ISY503 Assessment 3 — Sentiment Analysis
+# ISY503 Assessment 3 - Sentiment Analysis
 
-**Author:** Jhonatan  
-**Subject:** ISY503 Intelligent Systems — Torrens University Australia  
+**Author:** Jhonatan Mosquera Caro
+**Subject:** ISY503 Intelligent Systems - Torrens University Australia  
 **Dataset:** Multi-Domain Sentiment Dataset (Blitzer et al., 2007)  
 **Dataset URL:** http://www.cs.jhu.edu/~mdredze/datasets/sentiment/index2.html  
 
@@ -24,8 +24,8 @@ customer data.
 
 | File | Description |
 |------|-------------|
-| `ISY503_A3_FINAL_v4.ipynb` | Full ML pipeline — run in Google Colab |
-| `sentiment_analyser.html` | Web interface — open in any browser |
+| `ISY503_A3_FINAL_v4.ipynb` | Full ML pipeline - run in Google Colab |
+| `sentiment_analyser.html` | Web interface - open in any browser |
 
 ---
 
@@ -43,4 +43,33 @@ customer data.
 
 ---
 
-## ML Pip
+## ML Pipeline
+
+| Step | Description |
+|------|-------------|
+| Load | BeautifulSoup parses XML review files |
+| Shuffle | Randomise to remove ordering bias |
+| Clean | Lowercase, punctuation removal, lemmatisation, stopwords |
+| Outlier removal | Remove reviews < 3 or > 500 words |
+| Encode | CountVectorizer converts text to word count vectors |
+| Normalise | MaxAbsScaler standardises feature vectors |
+| Split | 70% training / 15% validation / 15% test |
+| Batches | Python generator function, batch size 32 |
+| Train | MLP Neural Network — 128 → 64 neurons, ReLU, Adam |
+| Compare | Logistic Regression trained on same data |
+| Evaluate | Accuracy, classification report, confusion matrix |
+
+---
+
+## Ethical Considerations
+
+- **Labelling bias** - labels assigned by dataset creators may not reflect true sentiment for all reviewers
+- **Class balance** - equal positive/negative examples avoid model bias
+- **Deployment risk** - model should support human decisions, not replace them
+
+---
+
+## References
+
+Blitzer, J., Dredze, M., & Pereira, F. (2007). Biographies, Bollywood, 
+boom-boxes and blenders. *Proceedings of the 45th Annual Meeting of the ACL*, 187-205.
